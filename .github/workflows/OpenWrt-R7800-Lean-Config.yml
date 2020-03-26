@@ -6,7 +6,7 @@
 # Github: https://github.com/ClayMoreBoy
 #=================================================
 
-name: OpenWrt-R7800-Lean-Config(配置提取)
+name: R7800-Lean-Config(配置提取)
 
 on:
 # 定时触发
@@ -94,7 +94,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt-Bin-Dev
+        name: R7800-Bin(IPK插件合集)
         path: openwrt/bin
 
     - name: 整理文件
@@ -108,7 +108,7 @@ jobs:
     - name: 上传固件
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt-Firmware-R7800-Lean-Config(配置)
+        name: R7800-Lean-Config(配置)
         path: ./artifact/
     
     - name: 微信通知
