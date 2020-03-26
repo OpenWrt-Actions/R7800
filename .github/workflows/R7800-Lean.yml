@@ -6,7 +6,7 @@
 # Github: https://github.com/ClayMoreBoy
 #=================================================
 
-name: OpenWrt-R7800-Lean(固件)
+name: R7800-Lean(固件)
 
 on:
 # 定时触发
@@ -18,8 +18,8 @@ on:
 #    types: [published]
 
 # 点赞触发
-#  watch:
-#    types: [started]
+  watch:
+    types: [started]
 
 # 编辑触发
 #  push:
@@ -118,7 +118,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt-Bin-Lean(IPK插件集)
+        name: R7800-Bin-Lean(IPK插件集)
         path: openwrt/bin
 
     - name: 整理文件
@@ -134,8 +134,8 @@ jobs:
     - name: 上传固件
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt-Firmware-R7800-Lean(固件)
+        name: R7800-Lean(固件)
         path: ./artifact/
     
     - name: 微信通知
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=R7800-Lean(固件)编译完成
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=R7800-Lean固件编译完成
