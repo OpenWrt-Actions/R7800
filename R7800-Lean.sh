@@ -7,9 +7,6 @@
 # Github: https://github.com/ClayMoreBoy
 #=================================================
 
-# 定制默认IP
-# sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
-
 # 取掉默认主题
 sed -i 's/ +luci-theme-bootstrap//g' feeds/luci/collections/luci/Makefile
 
@@ -25,32 +22,14 @@ cp -f ../banner package/base-files/files/etc/
 rm -rf package/default-settings/files/zzz-default-settings
 cp -f ../zzz-default-settings package/lean/default-settings/files/
 
-# 增加制作人
-# sed -i "s/echo \"DISTRIB_DESCRIPTION='OpenWrt '\"/echo \"DISTRIB_DESCRIPTION='OpenWrt Compiled by ClayMoreBoy '\"/g" package/lean/default-settings/files/zzz-default-settings
-
-# 更改改机器名称
-# sed -i 's/OpenWrt/R7800/g' package/base-files/files/bin/config_generate
-
-# 替换默认Argon主题
-# rm -rf package/lean/luci-theme-argon
-# git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-
 # 添加第三方软件包
 git clone https://github.com/ClayMoreBoy/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/ClayMoreBoy/luci-app-serverchan.git package/luci-app-serverchan
-git clone -b passwall https://github.com/Lienol/openwrt-package package/luci-app-passwall
 git clone https://github.com/ClayMoreBoy/luci-app-adguardhome.git package/luci-app-adguardhome
-# git clone https://github.com/vernesong/OpenClash package/luci-app-OpenClash
 git clone https://github.com/sypopo/luci-theme-atmaterial.git package/lean/luci-theme-atmaterial
 git clone https://github.com/ClayMoreBoy/luci-theme-rosy.git package/luci-theme-rosy
-git clone https://github.com/Leo-Jo-My/luci-theme-Butterfly.git package/luci-theme-Butterfly
-git clone https://github.com/Leo-Jo-My/luci-theme-Butterfly-dark.git package/luci-theme-Butterfly-dark
-git clone https://github.com/Leo-Jo-My/luci-theme-opentomato.git package/luci-theme-opentomato
-git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
-git clone https://github.com/Leo-Jo-My/luci-theme-argon-mod.git package/luci-theme-argon-mod
-git clone https://github.com/apollo-ng/luci-theme-darkmatter package/luci-theme-darkmatter
 
-#创建自定义配置文件 - OpenWrt-R7800
+#创建自定义配置文件 - R7800
 
 rm -f ./.config*
 touch ./.config
@@ -78,54 +57,12 @@ CONFIG_TARGET_ipq806x=y
 CONFIG_TARGET_ipq806x_DEVICE_netgear_r7800=y
 EOF
 
-# 设置固件大小:
-# cat >> .config <<EOF
-# CONFIG_TARGET_KERNEL_PARTSIZE=300
-# CONFIG_TARGET_ROOTFS_PARTSIZE=500
-# EOF
-
-# 固件压缩:
-# cat >> .config <<EOF
-# CONFIG_TARGET_IMAGES_GZIP=y
-# EOF
-
-# 编译UEFI固件:
-# cat >> .config <<EOF
-# CONFIG_EFI_IMAGES=y
-# EOF
-
-# IPv6支持:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_dnsmasq_full_dhcpv6 is not set
-# CONFIG_PACKAGE_ipv6helper is not set
-# EOF
-
-# 多文件系统支持:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_kmod-fs-nfs=y
-# CONFIG_PACKAGE_kmod-fs-nfs-common=y
-# CONFIG_PACKAGE_kmod-fs-nfs-v3=y
-# CONFIG_PACKAGE_kmod-fs-nfs-v4=y
-# CONFIG_PACKAGE_kmod-fs-ntfs=y
-# CONFIG_PACKAGE_kmod-fs-squashfs=y
-# EOF
-
-# USB3.0支持:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_kmod-usb-ohci=y
-# CONFIG_PACKAGE_kmod-usb-ohci-pci=y
-# CONFIG_PACKAGE_kmod-usb2=y
-# CONFIG_PACKAGE_kmod-usb2-pci=y
-# CONFIG_PACKAGE_kmod-usb3=y
-# EOF
-
 # 第三方插件选择:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
 CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 CONFIG_PACKAGE_luci-app-cpufreq=y #CPU 性能优化调节
 CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
-# CONFIG_PACKAGE_luci-app-openclash is not set
 EOF
 
 # Lean插件选择:
@@ -188,9 +125,6 @@ CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2=y
 # CONFIG_PACKAGE_luci-app-filebrowser is not set #File Browser私有云
 # CONFIG_PACKAGE_luci-app-fileassistant is not set #文件助手
 # CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
-# CONFIG_PACKAGE_luci-app-samba is not set #网络共享
-# CONFIG_PACKAGE_autosamba is not set #网络共享
-# CONFIG_PACKAGE_samba36-server is not set #网络共享
 EOF
 
 # 常用LuCI插件(启用):
