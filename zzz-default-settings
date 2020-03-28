@@ -38,10 +38,6 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 
 sed -i "s/# //g" /etc/opkg/distfeeds.conf
 
-#默认关闭IPV6
-sed -i '/set dhcp.lan.dhcpv6/d' /odhcpd/files/odhcpd.defaults
-sed -i '/set dhcp.lan.ra/d' /odhcpd/files/odhcpd.defaults
-
 #设置默认管理IP地址
 uci set network.lan.ipaddr='10.0.0.1'
 uci set network.lan.netmask='255.255.255.0'
