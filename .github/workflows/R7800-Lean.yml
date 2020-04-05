@@ -6,7 +6,7 @@
 # Github: https://github.com/ClayMoreBoy
 #=================================================
 
-name: OpenWrt-R7800-Lean(固件)
+name: OpenWrt-R7800-Lean
 
 on:
 # 定时触发
