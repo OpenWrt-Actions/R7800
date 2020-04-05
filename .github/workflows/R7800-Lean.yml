@@ -158,6 +158,3 @@ jobs:
       with:
         name: OpenWrt-R7800-Lean-${{ env.DATE }}
         path: ./artifact/
-    
-    - name: 微信通知
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=R7800_Lean_${{ env.DATE }}固件编译完成
