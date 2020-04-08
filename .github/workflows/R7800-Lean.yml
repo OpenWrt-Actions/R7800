@@ -6,7 +6,7 @@
 # Github: https://github.com/ClayMoreBoy
 #=================================================
 
-name: OpenWrt-R7800-Lean
+name: R7800-Lean
 
 on:
 # 定时触发
@@ -38,7 +38,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  DIY_SH: OpenWrt-R7800-Lean.sh
+  DIY_SH: R7800-Lean.sh
   FREE_UP_DISK: true
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
