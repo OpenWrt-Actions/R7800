@@ -68,7 +68,6 @@ touch ./.config
 cat >> .config <<EOF
 CONFIG_KERNEL_BUILD_USER="ClayMoreBoy"
 CONFIG_KERNEL_BUILD_DOMAIN="github.com/ClayMoreBoy"
-CONFIG_GRUB_TITLE="OpenWrt AutoBuild By ClayMoreBoy"
 EOF
 
 # 编译R7800固件:
@@ -223,7 +222,7 @@ CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
 # CONFIG_PACKAGE_luci-app-nlbwmon is not set #宽带流量监控
 CONFIG_PACKAGE_luci-app-guest-wifi=y #WiFi访客网络
-CONFIG_PACKAGE_luci-app-netdata=y #Netdata实时监控(图表)
+# CONFIG_PACKAGE_luci-app-netdata is not set #Netdata实时监控(图表)
 CONFIG_PACKAGE_luci-app-cpufreq=y #CPU 性能优化调节
 EOF
 
