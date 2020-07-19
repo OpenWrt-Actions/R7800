@@ -74,7 +74,7 @@ EOF
 # 编译R7800固件:
 cat >> .config <<EOF
 CONFIG_TARGET_ipq806x=y
-CONFIG_TARGET_ipq806x_DEVICE_netgear_r7800=y
+CONFIG_TARGET_ipq806x_generic_DEVICE_netgear_r7800=y
 EOF
 
 # 设置固件大小:
@@ -163,7 +163,7 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin is not set
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs is not set
 EOF
 
@@ -172,7 +172,7 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_obfs is not set
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2=y
